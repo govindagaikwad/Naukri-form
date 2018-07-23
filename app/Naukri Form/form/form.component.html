@@ -1,0 +1,344 @@
+<div class="container">
+    <h3>{{title}}</h3>
+    <hr>
+    <form>
+        <!-- <div class="form-group">
+            <label for="name">Profile Name: </label>
+            <br>
+            <label style="border:1px solid black;" class="form-control" for="">Profile 1</label> -->
+        <!-- <input type="text" class="form-control" value="Profile 1"> 
+             </div>-->
+
+        <div class="col-md-6">
+            <mat-form-field class="w-100">
+                <input matInput type="text" value="Profile 1" disabled required>
+            </mat-form-field>
+        </div>
+
+
+
+
+        <h4>Contact Details</h4>
+
+        <div class="col-md-6">
+            <mat-form-field class="w-100">
+                <input matInput required placeholder=" Your Name" name="your_name" [(ngModel)]="your_name" [formControl]="nameFormControl">
+                <mat-error *ngIf="nameFormControl.hasError('required')">
+                    name is required.
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <!-- <div class="form-group">
+            <label for="name">Your Name: </label>
+            <input type="text" class="form-control" name="name" [formControl]="nameFormControl" name="your_name" [(ngModel)]="your_name">
+            <div class="alert alert-danger" *ngIf="nameFormControl.hasError('required')">
+                please enter name
+            </div>
+        </div> -->
+        <div class="col-md-6">
+            <mat-form-field class="w-100">
+                <input matInput required placeholder="Email" name="email_address" [(ngModel)]="email_address" [formControl]="emailFormControl">
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    email is required.
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('email') ">
+                    please enter valid email address.
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+
+        <!-- <div class="form-group">
+            <label for="name">*Email Address:</label>
+            <input type="email" [formControl]="emailFormControl" class="form-control" name="email_address" [(ngModel)]="email_address">
+            <div class="alert alert-danger" *ngIf="emailFormControl.hasError('email')">
+                please enter correct email
+            </div>
+            <div class="alert alert-danger" *ngIf="emailFormControl.hasError('required')">
+                please enter email
+            </div>
+        </div> -->
+
+
+        <div class="col-md-6">
+            <mat-form-field class="w-100">
+                <input matInput required placeholder="Current Location" name="current_location" [(ngModel)]="current_location">
+            </mat-form-field>
+        </div>
+        <input type="checkbox">
+        <label>Outside India</label>
+
+        <!-- <div class="form-group">
+            <label for="name">*Current Location: </label>
+            <input type="text" class="form-control" name="current_location" [(ngModel)]="current_location">
+            <input type="checkbox">
+            <label>Outside India</label> -->
+
+
+        <p>Contact Number: At least one among Mobile And Landline numbers is mandatory</p>
+
+        <div class="col-md-6">
+            <mat-form-field class="w-100">
+                <input matInput type="text" required placeholder="Mobile" name="mobile_no" [(ngModel)]="mobile_no" [formControl]="contactFormControl">
+                <mat-error *ngIf="contactFormControl.hasError('required')">
+                    contact is required.
+                </mat-error>
+                <mat-error *ngIf="contactFormControl.hasError('pattern')">
+                    please enter valid contact.
+                </mat-error>
+
+            </mat-form-field>
+        </div>
+
+        <!-- <div class="form-group">
+            <label for="number">*Mobile:</label>
+            <input type="text" class="form-control" maxlength="10" name="number" [formControl]="contactFormControl"
+            name="mobile_no" [(ngModel)]="mobile_no">
+            <p> you do not have a mobile,enter
+                <strong> Landline no</strong>
+            </p>
+            <div class="alert alert-danger" *ngIf="contactFormControl.hasError('pattern')">
+                please enter correct number
+            </div>
+            <div class="alert alert-danger" *ngIf="contactFormControl.hasError('required')">
+                please enter Mobile number
+            </div> 
+
+        </div>-->
+        <h4>Current Professional Details</h4>
+        <div class="form-group">
+            <label for="number">*Total Experience:</label>
+            <br>
+        </div>
+
+        <mat-form-field>
+            <mat-select placeholder="Year" name="exp_year" [(ngModel)]="exp_year">
+                <mat-option *ngFor="let y of year" [value]="y">{{y}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- <label>Year:</label>
+            <select name="" id="" class="form-control" name="exp_year" [(ngModel)]="exp_year">
+                <option>Select Year</option>
+                <option *ngFor="let y of year">{{y}} </option>
+            </select> 
+            <label>Month:</label>-->
+
+        <mat-form-field>
+            <mat-select placeholder="Month" name="exp_month" [(ngModel)]="exp_month">
+                <mat-option *ngFor="let y of year" [value]="y">{{y}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- <select name="" id="" class="form-control" name="exp_month" [(ngModel)]="exp_month">
+                <option>Select Month</option>
+                <option *ngFor="let y of year">{{y}} </option>
+            </select> 
+        </div>-->
+
+        <div class="col-md-6">
+            <mat-form-field class="w-100">
+                <input matInput required placeholder="Current Industry" name="current_ind" [(ngModel)]="current_ind">
+            </mat-form-field>
+        </div>
+
+        <!-- <div class="form-group">
+            <label for="name">*Current Industry:</label>
+            <input type="text" class="form-control" name="current_ind" [(ngModel)]="current_ind"> 
+        </div>-->
+
+        <div class="col-md-6">
+            <mat-form-field class="w-100">
+                <input matInput required placeholder="Functional Area" name="fun_area" [(ngModel)]="fun_area">
+            </mat-form-field>
+        </div>
+
+        <!-- <div class="form-group">
+            <label for="name">*Functional Area:</label>
+            <input type="text" class="form-control" name="fun_area" [(ngModel)]="fun_area"> -->
+        <p>
+            <strong>what is my Functional Area and indusrty</strong>
+        </p>
+
+        <div class="col-md-6">
+            <mat-form-field class="w-100">
+                <input matInput required placeholder="Key Skill" maxlength="250">
+            </mat-form-field>
+        </div>
+        <label>250 Words</label>
+
+        <!-- </div> -->
+        <!-- <div class="form-group">
+            <label for="name">*key Skills:</label>
+            <input type="text" maxlength="250" class="form-control">
+            <label>250</label>
+        </div> -->
+
+        <div class="col-md-6">
+            <mat-form-field class="w-100">
+                <input matInput required placeholder="Resume  Headline" maxlength="250">
+            </mat-form-field>
+        </div>
+        <label>250 Words</label>
+
+        <!-- <div class="form-group">
+            <label for="name">*Resume Headline:
+                <textarea name="" id="" cols="30" rows="3" maxlength="250" class="form-control"></textarea>
+                <label>250</label> 
+            </label>
+            </div>-->
+        <p>Your Resume headline is the first thing Recuireter will see.
+            <strong>view Example</strong>
+        </p>
+
+        <h4>Education Details</h4>
+        <!-- <div class="form-group">
+            <label for="name">*Basic/Graduation:</label>
+            <select name="" id="" class="form-control" name="basic_g" [(ngModel)]="basic_g">
+            <option value="">select Graduation</option>
+            <option *ngFor="let c of course">option for Graduation:{{c}}</option>
+
+                / <option value="">Gaikwad</option>
+                <option value="">Govinda</option>
+                <option value="">Balasaheb</option> /
+            </select>
+        </div> -->
+
+        <mat-form-field>
+            <mat-select placeholder="Basic /Graduation" name="basic_g" [(ngModel)]="basic_g">
+                <mat-option *ngFor="let c of course" [value]="c">option for Graduation:{{c}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- <div class="form-group">
+            <label for="name">*Post Graduation:</label>
+            <select name="" id="" class="form-control" name="post_g" [(ngModel)]="post_g">
+            <option value="">select Post Graduation</option>
+            <option *ngFor="let c of course">option for Post Graduation:{{c}}</option>
+                /<option value="">Gaikwad</option>
+                <option value="">Govinda</option>
+                <option value="">Balasaheb</option> /
+            </select>
+        </div> -->
+
+        <div class="w-100">
+            <mat-form-field>
+                <mat-select placeholder="Post Graduation" name="post_g" [(ngModel)]="post_g">
+                    <mat-option *ngFor="let c of course" [value]="c">option for Post Graduation:{{c}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!--     <div class="form-group">
+            <label for="name">*Doctorate/Phd:</label>
+            <select name="" id="" class="form-control" name="doct_phd" [(ngModel)]="doct_phd">
+            <option value="">select Doctorate/Phd Name</option>
+            <option *ngFor="let c of course">option for Doctorate/Phd:{{c}}</option>
+              /<option value="">Gaikwad</option>
+                <option value="">Govinda</option>
+                <option value="">Balasaheb</option> /
+            </select>
+        </div> -->
+
+        <div class="w-100">
+            <mat-form-field>
+                <mat-select placeholder="Doctarate/phd" name="doct_phd" [(ngModel)]="doct_phd">
+                    <mat-option *ngFor="let c of course" [value]="c">option for Doctorate/Phd:{{c}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <h4>Other Certifications</h4>
+        <!-- <div class="form-group">
+            <label for="name">*Diploma/Certificate:</label>
+            <input type="text" class="form-control" name="dip_cert1" [(ngModel)]="dip_cert1">
+        </div> -->
+
+        <div class="col-md-6">
+            <mat-form-field class="w-100">
+                <input matInput required placeholder="Diploma/Certificate" name="dip_cert1" [(ngModel)]="dip_cert1">
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+            <mat-form-field class="w-100">
+                <input matInput required placeholder="Diploma/Certificate" name="dip_cert2" [(ngModel)]="dip_cert2">
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+            <mat-form-field class="w-100">
+                <input matInput required placeholder="Diploma/Certificate" name="dip_cert3" [(ngModel)]="dip_cert3">
+            </mat-form-field>
+        </div>
+
+        <!--    <div class="form-group">
+            <label for="name">*Diploma/Certificate:</label>
+            <input type="text" class="form-control" name="dip_cert2" [(ngModel)]="dip_cert2">
+        </div>
+        <div class="form-group">
+            <label for="name">*Diploma/Certificate:</label>
+            <input type="text" class="form-control" name="dip_cert3" [(ngModel)]="dip_cert3">
+        </div> -->
+        <!-- <h4>Upload Resume</h4>
+        <label for="name">Attach Resume</label>
+        <div class="col-md-6">
+            <mat-form-field class="w-100">
+                    <input type="file" required placeholder="upload Resume">
+                </mat-form-field>
+                 </div>  -->
+
+        <h4>Upload Resume</h4>
+        <label for="name">Attach Resume</label>
+        <div class="col-md-6">
+            <input type="file" required placeholder="Diploma/Certificate">
+            <label>Supported Format:doc,docx,rtf.Max Fil Size:2MB</label>
+        </div>
+        <!-- <div class="form-group">
+            <label for="name">Attach Resume</label>
+            <input type="file" class="form-control">
+            <br>
+            <label>Supported Format:doc,docx,rtf.Max Fil Size:2MB</label>
+        </div> -->
+    
+
+    <p>
+        <strong> may also write or copy-paste your resume here</strong>
+    </p>
+    <p>if you do not have your resume,you may still continue to create your account.</p>
+    <h4>Mailer and Privacy Settings</h4>
+    <div>
+        <mat-checkbox>Job Alert</mat-checkbox>
+        <mat-checkbox>Naukri FastForword Emails</mat-checkbox>
+        <mat-checkbox>Naukri FastForword Calls/SMS</mat-checkbox>
+    </div>
+    <div>
+        <mat-checkbox>Important Notification From Naukri.com</mat-checkbox>
+        <mat-checkbox>Communication from Clients(Voice/Calls/SMS)</mat-checkbox>
+        <mat-checkbox>Other Promotional/Special Offers</mat-checkbox>
+    </div>
+    <!-- <ul>
+        <li>
+            <input type="checkbox">Job Alert</li>
+        <li>
+            <input type="checkbox">Naukri FastForword Emails</li>
+        <li>
+            <input type="checkbox">Naukri FastForword Calls/SMS</li>
+    </ul>
+    <ul>
+        <li>
+            <input type="checkbox">Important Notification From Naukri.com</li>
+        <li>
+            <input type="checkbox">Communication from Clients(Voic/Calls/SMS)</li>
+        <li>
+            <input type="checkbox">Other Promotional/Special Offers</li>
+    </ul> -->
+
+    <button type="submit" class="btn btn-primary" (click)="SaveAndNext()">Save & Next</button>
+</form>
+</div>

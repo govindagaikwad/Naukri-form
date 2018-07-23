@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+strong{
+    color: rgb(224, 22, 134)
+}
+ul{
+    list-style: none;
+}
+hr{
+    border: 2px dotted red;
+}
+h4{
+    text-decoration: underline;
+}

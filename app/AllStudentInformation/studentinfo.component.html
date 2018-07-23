@@ -1,0 +1,145 @@
+<h3>{{title}}</h3>
+<br>
+<h2>Signup Detail Form</h2>
+<h3>table created by using async data</h3>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Contact</th>
+    </tr>
+    <tr *ngFor="let datas of data2">
+        <td>{{datas.name}}</td>
+        <td>{{datas.username}}</td>
+        <td>{{datas.email}}</td>
+        <td>{{datas.contact}}</td>
+    </tr>
+</table>
+
+
+<h2>Step1 Detail Form</h2>
+<!-- <table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email Address</th>
+        <th>Current location</th>
+        <th>Mobile No</th>
+        <th>Total Exp.(Year)</th>
+        <th>Total Exp.(Month)</th>
+        <th>Current Indusrty</th>
+        <th>Functional Area</th>
+        <th>Basic/Graduation</th>
+        <th>Post/Graduation</th>
+        <th>Doctorate/Phd</th>
+        <th>Diploma/Certificate</th>
+        <th>Diploma/Crtificate</th>
+        <th>Diploma/Crtificate</th>
+
+
+    </tr>
+    <tr *ngFor="let datas of data">
+        <td>{{datas.name}}</td>
+        <td>{{datas.username}}</td>
+        <td>{{datas.email}}</td>
+        <td>{{datas.contact}}</td>
+        <td>{{datas.name}}</td>
+        <td>{{datas.username}}</td>
+        <td>{{datas.email}}</td>
+        <td>{{datas.contact}}</td>
+        <td>{{datas.name}}</td>
+        <td>{{datas.username}}</td>
+        <td>{{datas.email}}</td>
+        <td>{{datas.contact}}</td>
+        <td>{{datas.email}}</td>
+        <td>{{datas.contact}}</td>
+    </tr>
+</table> -->
+
+<div *ngFor="let a of data1">
+    <div>
+    <label>Name: </label>
+    <label>{{a.your_name}}</label>
+</div>
+<div>
+    <label>Email Address: </label>
+    <label>{{a.email_address}}</label>
+</div>
+<div>
+    <label>Current location: </label>
+    <label>{{a.current_location}}</label>
+</div>
+<div>
+    <label>Mobile No: </label>
+    <label>{{a.mobile_no}}</label>
+</div>
+<div>
+    <label>Total Exp(Year): </label>
+    <label>{{a.exp_year}}</label>
+</div>
+<div>
+    <label>Total Exp(Month): </label>
+    <label>{{a.exp_month}}</label>
+</div>
+<div>
+    <label>Current Indusrty: </label>
+    <label>{{a.current_ind}}</label>
+</div>
+<div>
+    <label>Functional Area: </label>
+    <label>{{a.fun_area}}</label>
+</div>
+<div>
+    <label>Basic/Graduation: </label>
+    <label>{{a.basic_g}}</label>
+</div>
+<div>
+    <label>Post/Graduation: </label>
+    <label>{{a.post_g}}</label>
+</div>
+<div>
+    <label>Doctorate/Phd: </label>
+    <label>{{a.doct_phd}}</label>
+</div>
+
+<div>
+    <label>Diploma/Certificate: </label>
+    <label>{{a.dip_cert1}}</label>
+</div>
+
+<div>
+    <label>Diploma/Certificate: </label>
+    <label>{{a.dip_cert2}}</label>
+</div>
+
+<div>
+    <label>Diploma/Certificate :</label>
+    <label>{{a.dip_cert3}}</label>
+</div>
+<hr>
+</div>
+
+
+<h2>Step2 Detail Form</h2>
+<table border="1">
+    <tr>
+        <th>Course Name</th>
+        <th>Specialization</th>
+        <th>University/Institute</th>
+        <th>Gratuated in</th>
+        <th>Functional Area</th>
+        <th>Role</th>
+        
+
+    </tr>
+    <tr *ngFor="let b of data3">
+        
+        <td>{{b.c_name}}</td>
+        <td>{{b.spec}}</td>
+        <td>{{b.univercity}}</td>
+        <td>{{b.graduated}}</td>
+        <td>{{b.fun_area}}</td>
+        <td>{{b.role}}</td>
+
+    </tr>
+</table>

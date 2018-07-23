@@ -1,0 +1,166 @@
+<div class="container border bg-light col-md-6 mt-5 mb-5">
+    <!-- bg-warning font-weight-bold" style="padding: 0px 250px;" -->
+    <h3>{{title}}</h3>
+    <hr>
+    <form>
+        <!-- for update method -->
+        <!-- <div>
+                    <select name="select" id="">
+                        <option>Select Name</option>
+                        <option *ngFor="let a of data1">
+                            {{a.name}}
+                        </option>
+                    </select>
+                </div> -->
+                <div class="col-md-6">
+                <mat-form-field class="w-100">
+                    <input matInput required placeholder="Name" name="name" [(ngModel)]="name" [formControl]="nameFormControl">
+                    <mat-error *ngIf="nameFormControl.hasError('required')">
+                        name is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+        <!-- <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="name" [formControl]="nameFormControl">
+        </div>
+        <div class="alert alert-danger" *ngIf="nameFormControl.hasError('required')">
+            please enter name
+        </div> -->
+<div class="col-md-6">
+        <mat-form-field class="w-100">
+                <input matInput required placeholder="Username" name="username" [(ngModel)]="username" [formControl]="usernameFormControl">
+                <mat-error *ngIf="usernameFormControl.hasError('required')">
+                    username is required.
+                </mat-error>
+            </mat-form-field>
+        </div> 
+
+
+        <!-- <div class="form-group">
+            <label for="Username">Username:</label>
+            <input type="text" class="form-control" name="username" [(ngModel)]="username" [formControl]="usernameFormControl">
+        </div>
+
+        <div class="alert alert-danger" *ngIf="usernameFormControl.hasError('required')">
+            please enter username (*required for login)
+        </div> -->
+
+        <div class="col-md-6">
+                <mat-form-field class="w-100">
+                        <input matInput required placeholder="Email" name="email" [(ngModel)]="email" [formControl]="emailFormControl">
+                        <mat-error *ngIf="emailFormControl.hasError('required')">
+                            email is required.
+                        </mat-error>
+                        <mat-error *ngIf="emailFormControl.hasError('email') ">
+                                please enter valid email address.
+                            </mat-error>
+                    </mat-form-field>
+                </div> 
+
+        <!-- <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="email" [formControl]="emailFormControl">
+            <div class="alert alert-danger" *ngIf="emailFormControl.hasError('email')">
+                please enter correct email
+            </div>
+
+            <div class="alert alert-danger" *ngIf="emailFormControl.hasError('required')">
+                please enter correct email id.
+            </div>
+        </div> -->
+
+        <div class="col-md-6">
+                <mat-form-field class="w-100">
+                        <input matInput  type="password"  required placeholder="Password" name="password" [(ngModel)]="password" [formControl]="passwordFormControl">
+                        <mat-error *ngIf="passwordFormControl.hasError('required')">
+                            password is required.
+                        </mat-error>
+                        
+                    </mat-form-field>
+                </div> 
+
+
+        <!-- <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="password" [formControl]="passwordFormControl">
+        </div>
+        <div class="alert alert-danger" *ngIf="passwordFormControl.hasError('required')">
+            Enter password (*required for login)
+        </div> -->
+
+        <div class="col-md-6">
+                <mat-form-field class="w-100">
+                        <input matInput  type="text"  required placeholder="Contact" name="contact" [(ngModel)]="contact" [formControl]="contactFormControl">
+                        <mat-error *ngIf="contactFormControl.hasError('required')">
+                            contact is required.
+                        </mat-error>
+                        <mat-error *ngIf="contactFormControl.hasError('pattern')">
+                        please enter valid contact.
+                            </mat-error>
+                        
+                    </mat-form-field>
+                </div> 
+
+
+        <!-- <div class="form-group">
+            <label for="contact">Contact:</label>
+            <input type="text" class="form-control" maxlength="10" name="contact" [(ngModel)]="contact" [formControl]="contactFormControl">
+        </div>
+        <div class="alert alert-danger" *ngIf="contactFormControl.hasError('pattern')">
+            Enter contact correct no.
+        </div>
+        <div class="alert alert-danger" *ngIf="contactFormControl.hasError('required')">
+            Enter contact number
+        </div> -->
+
+        <!-- {{data1 |json}} -->
+
+        <div>
+
+            <button type="submit" class="btn btn-primary"  (click)="submit()">Submit</button>
+            <p style="margin-left: 100px;">Already Registered?
+                <strong (click)="returnlogin()"> *Login </strong>here</p>
+
+
+        </div>
+    </form>
+</div>
+<!-- that table is crated by step 1 -->
+<!-- <h3>table created by using async data</h3>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+         <th>Password</th> 
+        <th>Contact</th>
+    </tr>
+    <tr *ngFor="let datas of data | async">
+        <td>{{datas.name}}</td>
+        <td>{{datas.username}}</td>
+        <td>{{datas.email}}</td>
+         <td>{{datas.password}}</td>
+        <td>{{datas.contact}}</td>
+    </tr>
+</table>
+<br> -->
+<!-- that table is created by step 2 -->
+<!-- <h3>table created by using async data</h3>
+<table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+             <th>Password</th> 
+            <th>Contact</th>
+        </tr>
+        <tr *ngFor="let datas of data1">
+            <td>{{datas.name}}</td>
+            <td>{{datas.username}}</td>
+            <td>{{datas.email}}</td>
+             <td>{{datas.password}}</td>
+            <td>{{datas.contact}}</td>
+        </tr>
+    </table> -->

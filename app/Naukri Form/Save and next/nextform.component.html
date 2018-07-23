@@ -1,0 +1,195 @@
+<div class="container">
+    <h3>{{title}}</h3>
+    <hr>
+    <!--  {{NextFormModel.value|json}} -->
+    <p>Your profile will get Created when you submit this page</p>
+    <h4>Education Details</h4>
+    <h4>Basic/Graduation</h4>
+
+    <form [formGroup]="NextFormModel">
+
+            <mat-form-field>
+                    <mat-select placeholder="Cource Name" name="c_name" [(ngModel)]="c_name" formControlName="c_name">
+                        <mat-option>select Course Name</mat-option>
+                        <mat-option *ngFor="let c of course" [value]="c">option for courses:{{c}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="this.NextFormModel.value.c_name == ''">
+                            please select valid course
+                    </mat-error>
+                </mat-form-field>
+
+        <!-- <div class="form-group">
+            <label for="Course">*Course Name:</label>
+            <select name=" " id="" class="form-control" name="c_name" formControlName="c_name">
+                <option value="">select Course Name</option>
+                <option *ngFor="let c of course">option for courses:{{c}}</option>
+                 <option value="">BE/B.Tech</option> 
+            </select>
+        </div> -->
+        <!-- <div class="alert alert-danger" *ngIf="this.NextFormModel.value.c_name == ''">
+            please select valid course
+        </div> -->
+
+        <div>
+                <mat-radio-group>
+                        <mat-radio-button value="1">Full Time</mat-radio-button>
+                        <br>
+                        <mat-radio-button value="2">Part Time</mat-radio-button>                      
+                        <br>
+                        <mat-radio-button value="3">Correspondence/Distance Learning</mat-radio-button> 
+                      </mat-radio-group>
+            <!-- <ul>
+                    <mat-slide-toggle>Slide me!</mat-slide-toggle>
+                <li>
+                    <input type="radio" name="radio">Full Time</li>
+                <li>
+                    <input type="radio" name="radio">Part Time</li>
+                <li>
+                    <input type="radio" name="radio">Correspondence/Distance Learning</li>
+            </ul> -->
+        </div>
+        <mat-form-field>
+            <mat-select placeholder="Specialization" name="spec" [(ngModel)]="spec" formControlName="spec">
+                <mat-option>select Specialization</mat-option>
+                <mat-option *ngFor="let c of course" [value]="c">option for Specialization:{{c}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="this.NextFormModel.value.c_name == ''">
+                    please select valid specialization
+            </mat-error>
+        </mat-form-field>
+
+<!-- 
+        <div>
+            <label for="Specialization" class="form-group">*Specialization</label>
+            <select name=" " id="" class="form-control" name="spec" formControlName="spec">
+                <option value="">Select Specialization</option>
+                <option *ngFor="let c of course">option for Specialization:{{c}}</option>
+                / <option value="">Elctronics/Telecommunication</option> 
+                <option value="">Civil</option>
+                <option value="">Mechanical</option>
+                <option value="">Computer</option>
+                <option value="">Information Technology</option> /
+            </select>
+        </div> 
+    <div class="alert alert-danger" *ngIf="this.NextFormModel.value.spec == ''">
+        please select valid Specialization.
+    </div>-->
+<div> 
+       <mat-form-field>
+        <mat-select placeholder="University/Institute" name="univercity" [(ngModel)]="univercity" formControlName="univercity">
+            <mat-option>select Specialization</mat-option>
+            <mat-option *ngFor="let c of course" [value]="c">option for University:{{c}}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.NextFormModel.value.c_name == ''">
+                please select  University/Institute
+        </mat-error>
+    </mat-form-field>
+</div>
+
+
+        <!-- <div>
+            <label for="University" class="form-group">*University/Institute</label>
+            <input type="text" class="form-control" name="univercity" formControlName="univercity">
+        </div>
+
+        <div class="alert alert-danger" *ngIf="this.NextFormModel.value.univercity == ''">
+                please select University/Institute.
+            </div> -->
+
+            <div> 
+       <mat-form-field>
+        <mat-select placeholder="Graduated in" name="graduated" [(ngModel)]="graduated" formControlName="graduated">
+            <mat-option>select year</mat-option>
+            <mat-option *ngFor="let y of year" [value]="y">{{y}}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.NextFormModel.value.c_name == ''">
+                please select  Graduation completed year.
+        </mat-error>
+    </mat-form-field>
+</div>
+
+        <!-- <div>
+            <label for="Graduation" class="form-group">*Graduated in</label>
+            / <input type="number" class="form-control"> /
+            <select name="" id="" class="form-control" name="graduated" formControlName="graduated">
+                <option>Select year</option>
+                <option *ngFor="let y of year">{{y}} </option>
+            </select>
+        </div>
+
+        <div class="alert alert-danger" *ngIf="this.NextFormModel.value.graduated == ''">
+                please select Graduation completed year.
+            </div> -->
+
+        <h4>Employment Details</h4>
+
+        <!-- <div>
+            <label for="area" class="form-group">*Functional Area:</label>
+            <select name=" " id="" class="form-control" name="fun_area" formControlName="fun_area">
+                <option value="">Select Functional Area</option>
+                <option *ngFor="let c of course">option for Functional Area:{{c}}</option>
+            /<option value="">Elctronics/Telecommunication</option>
+                <option value="">Civil</option>
+                <option value="">Mechanical</option>
+                <option value="">Computer</option>
+                <option value="">other</option> /
+            </select>
+        </div> -->
+        <div>
+        <mat-form-field>
+                <mat-select placeholder="Functional Area" name="fun_area" [(ngModel)]="fun_area" formControlName="fun_area">
+                    <mat-option>select Functional Area</mat-option>
+                    <mat-option *ngFor="let c of course" [value]="c">option for Functional Area:{{c}}
+                    </mat-option>
+                </mat-select>
+                <!-- <mat-error *ngIf="this.NextFormModel.value.c_name == ''">
+                        please select Functional Area
+                </mat-error> -->
+            </mat-form-field>
+        </div>
+
+        <!-- <div>
+            <label for="role" class="form-group">*Role:</label>
+            <select name=" " id="" class="form-control" name="role" formControlName="role">
+                <option value="">Select Your Role</option>
+                <option *ngFor="let c of course">option for Role:{{c}}</option>
+                / <option value="">Elctronics/Telecommunication Engg</option>
+                <option value="">Civil Engg</option>
+                <option value="">Mechanical Engg</option>
+                <option value="">Computer Engg</option>
+                <option value="">other</option> /
+            </select>
+        </div> -->
+
+        <div>
+                <mat-form-field>
+                        <mat-select placeholder="Role " name="role" [(ngModel)]="role" formControlName="role">
+                            <mat-option>select role</mat-option>
+                            <mat-option *ngFor="let c of course" [value]="c">option for Role :{{c}}
+                            </mat-option>
+                        </mat-select>  
+        </mat-form-field>
+        </div>        
+        
+
+        <div>
+                <div class="col-md-6">
+                        <mat-form-field class="w-100">
+                            <input matInput required placeholder="Profile Summary" maxlength="1000" class="form-control" name="profile_summary" formControlName="profile_summary">
+                        </mat-form-field>
+                    </div>
+                    <label>1000 Words</label>
+            <!-- <label for="profile" class="form-group">profile Summary</label>
+            <textarea type="text" maxlength="1000" class="form-control" name="profile_summary" formControlName="profile_summary"></textarea>
+            -- <textarea type="text" maxlength="1000" class="form-control"> --
+            <label for="number">1000</label> -->
+        </div>
+        <button class="btn btn-primary" value="Submit" (click)="saveyourprofile();" >Save My Profile</button>
+
+        <!-- <mat-spinner></mat-spinner> -->
+    </form>
+</div>
